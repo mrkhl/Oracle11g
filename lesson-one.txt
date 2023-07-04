@@ -1,0 +1,54 @@
+--this comand select all from the table department
+SELECT * FROM departments;
+
+
+-- this comand select all rows with the last name , salary and the commision columns
+--not matter if the value is null becouse the null is not zero
+select last_name,job_id, commission_pct from employees;
+
+
+--this comand selet all rows frome table employyes  with the tow coloumns 
+--the tow coloumns is last name and represented withe aliase (name)
+--and the commission_pct coloumn withe aliase (comm)
+SELECT last_name AS name, commission_pct comm
+FROM employees;
+
+
+
+--this comand select all rows from table employees 
+-- in tow coloumns last name and the other on is multiplication
+--12 in salary in commission_pct
+SELECT last_name, 12*salary*commission_pct
+FROM employees;
+
+
+--this comand will select tow coloumns with all rows in table employees
+--last name Concatenat with job id in coloumn with aliase name "Employees"
+SELECT last_name||job_id AS "Employees"
+FROM employees;
+
+
+--this comand will select the whole rows from employees table  with tow coloumns last name and job id 
+--cocatnated togather with 'a' bettween them in a coloumn with aliase name "Employee Details" 
+SELECT last_name ||' is a '||job_id
+AS "Employee Details"
+FROM employees;
+
+
+--this comand will show the deepartment name with the manager id of hte department 
+-- in this comand we use select and concatenation with aliaes name for the coloumn
+SELECT department_name || q'[ Department's Manager Id: ]'
+|| manager_id
+AS "Department and Manager"
+FROM departments;
+
+
+-- comand will show the deparments id's from table deparments
+-- with no Duplicate Rows
+SELECT DISTINCT department_id
+FROM employees;
+
+
+--this comand will describe the table (size , data tybe, coloumns
+DESCRIBE employees;
+
