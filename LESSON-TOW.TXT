@@ -52,3 +52,29 @@ WHERE last_name LIKE '_o%' ;
 SELECT last_name, manager_id
 FROM employees
 WHERE manager_id IS NULL ;
+
+-- ths quary is selecting all rows with the menioned coloumns 
+-- that the the employee salary grater than or equal to 10000
+--"AND" the job id contain 'MAN'
+SELECT employee_id, last_name, job_id, salary
+FROM employees
+WHERE salary >= 10000
+AND job_id LIKE '%MAN%' ;
+
+
+-- ths quary is selecting all rows with the menioned coloumns 
+-- that the the employee salary grater than or equal to 10000
+--"OR" the job id contain 'MAN'
+SELECT employee_id, last_name, job_id, salary
+FROM employees
+WHERE salary >= 10000
+OR job_id LIKE '%MAN%' ;
+
+
+
+--this quary will select all employees last name and job id
+--except the employees that there job id's is(('IT_PROG', 'ST_CLERK', 'SA_REP') 
+SELECT last_name, job_id
+FROM employees
+WHERE job_id
+NOT IN ('IT_PROG', 'ST_CLERK', 'SA_REP') ;
